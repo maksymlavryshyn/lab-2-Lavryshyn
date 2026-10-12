@@ -1,0 +1,12 @@
+// Точка входу. Усі partials підключаються через @use (не @import).
+// Порядок важливий: від змінних і бази до компонентів і секцій.
+@use "variables";
+@use "base";
+@use "components";
+@use "header";
+@use "hero";
+@use "sections";
+@use "products";
+@use "testimonial";
+@use "cta";
+@use "footer";

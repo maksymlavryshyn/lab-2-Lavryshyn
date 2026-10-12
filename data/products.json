@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Hot Desk Day Pass",
+    "price": 15,
+    "oldPrice": 18,
+    "image": "img/product-1.jpg",
+    "description": "Hot desk with a wooden chair",
+    "link": "#spaces"
+  },
+  {
+    "id": 2,
+    "title": "Dedicated Desk",
+    "price": 120,
+    "oldPrice": 140,
+    "image": "img/product-2.jpg",
+    "description": "Dedicated corner desk",
+    "link": "#spaces"
+  },
+  {
+    "id": 3,
+    "title": "Private Office",
+    "price": 320,
+    "oldPrice": 350,
+    "image": "img/product-3.jpg",
+    "description": "Private office with a storage cupboard",
+    "link": "#spaces"
+  },
+  {
+    "id": 4,
+    "title": "Meeting Room, 4 seats",
+    "price": 25,
+    "oldPrice": 30,
+    "image": "img/product-4.jpg",
+    "description": "Meeting room for four people",
+    "link": "#spaces"
+  },
+  {
+    "id": 5,
+    "title": "Phone Booth",
+    "price": 8,
+    "oldPrice": 10,
+    "image": "img/product-5.jpg",
+    "description": "Phone booth for calls",
+    "link": "#spaces"
+  },
+  {
+    "id": 6,
+    "title": "Team Studio",
+    "price": 540,
+    "oldPrice": 600,
+    "image": "img/product-6.jpg",
+    "description": "Team studio with long tables",
+    "link": "#spaces"
+  }
+]

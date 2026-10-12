@@ -1,0 +1,339 @@
+@use "mixins" as *;
+
+// ---------- Блок цифр ----------
+.stats {
+  position: relative;
+  z-index: 2;
+  margin-top: -2.1875rem;
+  margin-bottom: 3.125rem;
+
+  .container {
+    padding-inline: var(--gutter);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3.875rem;
+    padding: 2.5rem 0 3rem;
+    color: var(--color-on-dark);
+    background: var(--color-accent);
+    border-radius: var(--radius-xl);
+
+    @include mq(md) {
+      flex-wrap: nowrap;
+      row-gap: 0;
+      padding: 2.375rem 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50%;
+    gap: 0.3125rem;
+    text-align: center;
+
+    &:nth-child(even) {
+      border-left: 1px solid var(--color-divider-on-accent);
+    }
+
+    @include mq(md) {
+      flex: 1;
+      justify-content: center;
+      min-height: 6.25rem;
+
+      &:nth-child(n + 2) {
+        border-left: 1px solid var(--color-divider-on-accent);
+      }
+    }
+  }
+
+  &__num {
+    font-size: var(--fs-h2);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__label {
+    max-width: 7rem;
+    font-size: var(--fs-lead);
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+
+  @include mq(md) {
+    margin-top: -3.75rem;
+    margin-bottom: 1.875rem;
+  }
+}
+
+// ---------- Блоки «картинка + текст» ----------
+.feature {
+  &__row {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 3.125rem;
+
+    // у варіанті --reverse порядок зворотний
+    .feature--reverse & {
+      flex-direction: column;
+    }
+
+    // Обидва селектори, бо .feature--reverse .feature__row має більшу специфічність
+    @include mq(md) {
+      &,
+      .feature--reverse & {
+        flex-direction: row;
+        gap: 3rem;
+      }
+    }
+
+    @include mq(lg) {
+      &,
+      .feature--reverse & {
+        gap: 6.25rem;
+      }
+    }
+  }
+
+  &__body {
+    width: 100%;
+
+    .lead {
+      margin-top: 0.9375rem;
+
+      @include mq(md) {
+        margin-top: 0.875rem;
+      }
+    }
+
+    @include mq(md) {
+      flex: 1;
+      width: auto;
+    }
+  }
+
+  &__media {
+    width: 100%;
+
+    img {
+      width: 100%;
+      border-radius: var(--radius-s);
+    }
+
+    @include mq(md) {
+      flex: 0 0 44.68%;
+      width: auto;
+    }
+  }
+
+  @include mq(md) {
+    padding-block: 4.625rem;
+  }
+
+  &--reverse {
+    @include mq(md) {
+      padding-block: 6rem;
+    }
+  }
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9375rem;
+
+    @include mq(md) {
+      gap: 1rem;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.125rem;
+
+    @include mq(md) {
+      width: 2rem;
+      height: 2rem;
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: var(--fs-lead);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__text {
+    margin-top: 0.5rem;
+    font-size: var(--fs-body);
+    line-height: 1.75;
+
+    @include mq(md) {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+  }
+
+  @include mq(md) {
+    gap: 1.5625rem;
+    margin-top: 2.1875rem;
+  }
+}
+
+// ---------- «New Spaces» ----------
+.promo {
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @include mq(lg) {
+      flex-direction: row;
+      gap: 4.375rem;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    gap: 1.25rem;
+
+    @include mq(md) {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include mq(lg) {
+      flex: 0 0 15.3125rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0;
+      padding: 1.875rem 0 3rem;
+    }
+  }
+
+  &__title {
+    flex: 0 0 7.75rem;
+
+    @include mq(md) {
+      flex: 0 0 auto;
+      max-width: 15rem;
+    }
+
+    @include mq(lg) {
+      max-width: none;
+    }
+  }
+
+  &__text {
+    flex: 1;
+    font-size: var(--fs-body);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+
+    @include mq(md) {
+      flex: 0 1 18rem;
+    }
+
+    @include mq(lg) {
+      flex: 0 0 auto;
+      margin-top: auto;
+      padding-top: 2rem;
+    }
+  }
+
+  .link-arrow {
+    display: none;
+
+    @include mq(md) {
+      display: inline-flex;
+    }
+
+    @include mq(lg) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.125rem;
+
+    li:nth-child(n + 3) {
+      display: none;
+
+      @include mq(md) {
+        display: block;
+      }
+    }
+
+    @include mq(md) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    @include mq(lg) {
+      flex: 1;
+    }
+  }
+}
+
+.tile {
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 198 / 299;
+  border-radius: 0.3125rem;
+
+  &::after {
+    content: "";
+    grid-area: 1 / 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+  }
+
+  &__img {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+
+    .tile:hover & {
+      transform: scale(1.04);
+    }
+  }
+
+  &__caption {
+    grid-area: 1 / 1;
+    z-index: 1;
+    align-self: end;
+    padding-bottom: 1.875rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    color: var(--color-on-dark);
+    text-align: center;
+
+    @include mq(md) {
+      padding-bottom: 1.25rem;
+      font-size: 1.75rem;
+    }
+  }
+
+  @include mq(md) {
+    aspect-ratio: 265 / 400;
+  }
+}

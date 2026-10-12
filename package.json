@@ -1,0 +1,17 @@
+{
+  "name": "lab2-lavryshyn",
+  "version": "1.0.0",
+  "description": "Лабораторна робота 2: npm-проєкт із Sass і генерацією карток скриптом на Node.js (WorkNest, варіант 10)",
+  "private": true,
+  "author": "Maksym Lavryshyn",
+  "license": "UNLICENSED",
+  "scripts": {
+    "scss:build": "sass src/scss/main.scss css/style.css --no-source-map --style=compressed",
+    "scss:watch": "sass --watch src/scss/main.scss:css/style.css",
+    "build:cards": "node scripts/build-cards.js",
+    "build": "npm run build:cards && npm run scss:build"
+  },
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}

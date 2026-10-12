@@ -1,0 +1,127 @@
+@use "mixins" as *;
+
+.site-footer {
+  color: var(--color-on-dark);
+  background: var(--color-surface-dark);
+  font-family: var(--font-footer);
+
+  &__inner {
+    width: 100%;
+    max-width: calc(71.25rem + 2 * var(--gutter));
+    margin-inline: auto;
+    padding: 2.5rem var(--gutter) 0;
+
+    @include mq(md) {
+      padding-top: 3.5rem;
+    }
+  }
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  @include mq(md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-surface-muted);
+  }
+}
+
+.footer-brand {
+  font-family: var(--font-footer-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.003em;
+  line-height: normal;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 0.875rem;
+    background: var(--color-on-dark-soft);
+    border-radius: 50%;
+
+    &:hover {
+      background: var(--color-accent);
+    }
+  }
+
+  @include mq(md) {
+    gap: 1rem;
+  }
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5rem 1rem;
+  margin-top: 2.9375rem;
+  padding-left: 0.3125rem;
+
+  @include mq(md) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem 1.5rem;
+    margin-top: 4rem;
+    padding-left: 0;
+  }
+}
+
+.footer-col {
+  &__title {
+    margin-bottom: 1.5625rem;
+    font-family: var(--font-footer-title);
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__list {
+    li + li {
+      margin-top: 1.25rem;
+    }
+
+    a {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3.75rem;
+  margin-top: 3rem;
+  padding: 0 var(--gutter) 1.875rem;
+
+  &__text {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    text-align: center;
+
+    @include mq(md) {
+      font-size: 0.875rem;
+    }
+  }
+
+  @include mq(md) {
+    margin-top: 3.125rem;
+    padding-bottom: 0;
+  }
+}

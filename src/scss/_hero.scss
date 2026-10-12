@@ -1,0 +1,78 @@
+@use "mixins" as *;
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 37.75rem;
+  padding: 11.875rem var(--gutter) 3rem;
+  color: var(--color-on-dark);
+  text-align: center;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5)),
+    url("../img/hero-bg.jpg") center / cover no-repeat;
+  background-color: #4a545a;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--color-bg));
+    pointer-events: none;
+
+    @include mq(md) {
+      height: 6rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 18.125rem;
+    font-size: var(--fs-h1);
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: capitalize;
+
+    @include mq(md) {
+      max-width: 55.5rem;
+    }
+  }
+
+  &__text {
+    max-width: 18.3125rem;
+    margin-top: 1.875rem;
+    font-size: var(--fs-lead);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+
+    @include mq(md) {
+      max-width: 39.1875rem;
+    }
+  }
+
+  .btn {
+    margin-top: 1.875rem;
+
+    @include mq(md) {
+      margin-top: 4.0625rem;
+      padding: 1rem 5rem;
+      border-radius: 0.625rem;
+    }
+  }
+
+  @include mq(md) {
+    min-height: 53.125rem;
+    padding-top: 14.0625rem;
+  }
+}

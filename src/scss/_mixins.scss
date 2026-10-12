@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "variables" as v;
+
+// Медіазапит від ширини екрана: @include mq(md) { ... }
+@mixin mq($name) {
+  @if map.has-key(v.$breakpoints, $name) {
+    @media (min-width: #{map.get(v.$breakpoints, $name)}) {
+      @content;
+    }
+  } @else {
+    @error "Невідома точка переходу `#{$name}`. Доступні: #{map.keys(v.$breakpoints)}";
+  }
+}
